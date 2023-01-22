@@ -1,5 +1,5 @@
-local lspconfig = require'lspconfig'
-local nvim_lsp_installer = require'nvim-lsp-installer'
+local lspconfig = require("lspconfig")
+local nvim_lsp_installer = require("nvim-lsp-installer")
 
 nvim_lsp_installer.setup({
 	automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -73,17 +73,15 @@ vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {
 
 -- Add lsp server configuration
 local languages = {
-  "pyright",
-  "tsserver",
-  "rust_analyzer",
-  "sumneko_lua",
-  "phpactor",
-  "gopls",
-  "vuels"
+	"pyright",
+	"tsserver",
+	"rust_analyzer",
+	"sumneko_lua",
+	"phpactor",
+	"gopls",
+	"vuels",
 }
 
 for _, language in ipairs(languages) do
-  lspconfig[language].setup({})
+	lspconfig[language].setup({})
 end
-
-
